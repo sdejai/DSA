@@ -10,7 +10,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void printRevNuber(int num){
+    public static void printRevNumber(int num){
         for(int i=num;i>=1;i--){
             System.out.print(i+" ");
         }
@@ -20,7 +20,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int num=sc.nextInt();
         printNumber(num);
-        printRevNuber(num);
+        printRevNumber(num);
         // System.out.println("Hello World!");
     }
 }
