@@ -1,0 +1,44 @@
+package code;
+
+public class SelcetionSort {
+
+	public static void main(String[] args) {
+		int arr[]= {11,13,1,4,67,8,23};
+//		selectionSort(arr);
+		bubbleSort(arr);
+		printArr(arr);
+	}
+
+	public static void bubbleSort(int[] arr) {
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[i]>arr[j]) {
+					int temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}  
+		}
+	}
+
+	public static void printArr(int[] arr) {
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+
+	public static void selectionSort(int arr[]) {
+		for(int i=0;i<arr.length;i++) {
+			int minIndex=i;
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[minIndex]>arr[j]) {
+					minIndex=j;
+				}
+			}
+			int temp=arr[minIndex];
+			arr[minIndex]=arr[i];
+			arr[i]=temp;
+		}
+	}
+
+}
