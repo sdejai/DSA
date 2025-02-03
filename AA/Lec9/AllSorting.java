@@ -1,6 +1,6 @@
-package code;
+package Codes;
 
-public class Sorting {
+public class AllSorting {
 
 	public static void main(String[] args) {
 		int arr[]= {11,13,1,4,67,8,23};
