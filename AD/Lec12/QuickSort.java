@@ -37,7 +37,7 @@ public class QuickSort {
 	}
 
 	public static void main(String[] args) {
-		int arr[]= {11,1,2,5,9,6,23,22,3345,987};
+		int arr[]= {11,1,2,5,9,6,3456,232,111,90};
 		quickSort(arr,0,arr.length-1);
 		printArray(arr);
 	}
@@ -47,3 +47,4 @@ public class QuickSort {
 	
 
 }
+
