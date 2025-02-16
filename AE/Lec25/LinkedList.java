@@ -64,6 +64,7 @@ public class LinkedList {
 		int i=0;
 		while(i<index) {
 			temp=temp.next;
+			i++;
 		}
 		return temp;
 	}
