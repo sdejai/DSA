@@ -35,7 +35,7 @@ public class LinkedList {
 		}
 	}
 	void addByIndex(int value,int index) {
-		if(size==0) {
+		if(index==0) {
 			addFirst(value);
 		}
 		else if(size==index) {
