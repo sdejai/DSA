@@ -13,6 +13,7 @@ public class LinkedListMain {
 		ll.disply();
 		ll.addByIndex(70, 1);
 		ll.disply();
+		System.out.println(ll.getFirst());
 	}
 
 }

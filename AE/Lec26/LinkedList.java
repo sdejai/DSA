@@ -59,6 +59,15 @@ public class LinkedList {
 		}
 		return temp;
 	}
+	int getFirst() {
+		return head.data;
+	}
+	int getLast() {
+		return tail.data;
+	}
+	int getByIndex(int index) {
+		return getNode(index).data;
+	}
 	void disply() {
 		Node temp=head;
 		while(temp!=null) {
