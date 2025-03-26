@@ -49,6 +49,50 @@ public class LinkedList {
 		}
 	}
 
+	public int removeFirst() {
+		int removeElement = head.data;
+		if (size == 1) {
+			head = null;
+			tail = null;
+		} else {
+			Node temp = head;
+			head = head.next;
+			temp.next = null;
+		}
+		size--;
+		return removeElement;
+	}
+
+
+	public int removeLast() {
+		if (size == 1) {
+			return removeFirst();
+		} else {
+			int removeElement = tail.data;
+			Node tempNode = getNode(size - 1);
+			tempNode.next = null;
+			tail = tempNode;
+			size--;
+			return removeElement;
+		}
+	}
+
+	int sizeLL() {
+		return size;
+	}
+
+	int getFirst() {
+		return head.data;
+	}
+
+	int getLast() {
+		return tail.data;
+	}
+
+	int getByIndex(int index) {
+		return getNode(index).data;
+	}
+
 	Node getNode(int index) {
 		Node temp = head;
 		int i = 1;

@@ -18,6 +18,13 @@ public class LinkedListMain {
 		ll.addByIndex(17, 5);
 		ll.disply();
 //		System.out.println(ll.getNode(4).data);
+//		System.out.println(ll.getFirst());
+//		System.out.println(ll.removeFirst());
+//		ll.disply();
+//		System.out.println(ll.removeLast());
+//		ll.disply();
+//		System.out.println(ll.sizeLL());
+//		ll.disply();
 	}
 
 }
