@@ -49,6 +49,20 @@ public class LinkedList {
 		}
 	}
 
+	public int removeFirst() {
+		int removeElement = head.data;
+		if (size == 1) {
+			head = null;
+			tail = null;
+		} else {
+			Node temp = head;
+			head = head.next;
+			temp.next = null;
+		}
+		size--;
+		return removeElement;
+	}
+
 
 
 	int sizeLL() {

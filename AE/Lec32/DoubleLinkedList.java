@@ -1,9 +1,10 @@
-package LinkedList;
+package DoubleLinkedList;
 
-public class LinkedList {
+public class DoubleLinkedList {
 	class Node {
 		int data;
 		Node next;
+		Node pre;
 	}
 	private Node head;
 	private Node tail;
@@ -17,6 +18,7 @@ public class LinkedList {
 			size++;
 		} else {
 			temp.next = head;
+			head.pre=temp;
 			head = temp;
 			size++;
 		}
@@ -29,22 +31,8 @@ public class LinkedList {
 			addFirst(value);
 		} else {
 			tail.next = temp;
+			temp.pre=tail;
 			tail = temp;
-			size++;
-		}
-	}
-
-	void addByIndex(int value, int index) {
-		if (index == 1) {
-			addFirst(value);
-		} else if (size+1 == index) {
-			addLast(value);
-		} else {
-			Node temp = new Node();
-			temp.data = value;
-			Node previousIndex = getNode(index - 1);
-			temp.next = previousIndex.next;
-			previousIndex.next = temp;
 			size++;
 		}
 	}
@@ -70,7 +58,10 @@ public class LinkedList {
 	Node getNode(int index) {
 		Node temp = head;
 		int i = 1;
-		while (i < index) {
+		while (temp!=null) {
+			if(i==index) {
+				return temp;
+			}
 			temp = temp.next;
 			i++;
 		}
@@ -79,8 +70,9 @@ public class LinkedList {
 
 	void disply() {
 		Node temp = head;
+		System.out.print("null<-->");
 		while (temp != null) {
-			System.out.print(temp.data + "-->");
+			System.out.print(temp.data + "<-->");
 			temp = temp.next;
 		}
 		System.out.print("null");

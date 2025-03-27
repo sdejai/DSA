@@ -1,9 +1,10 @@
-package LinkedList;
+package DoubleLinkedList;
 
-public class LinkedList {
+public class DoubleLinkedList {
 	class Node {
 		int data;
 		Node next;
+		Node pre;
 	}
 	private Node head;
 	private Node tail;
@@ -17,6 +18,7 @@ public class LinkedList {
 			size++;
 		} else {
 			temp.next = head;
+			head.pre=temp;
 			head = temp;
 			size++;
 		}
@@ -29,6 +31,7 @@ public class LinkedList {
 			addFirst(value);
 		} else {
 			tail.next = temp;
+			temp.pre=tail;
 			tail = temp;
 			size++;
 		}
@@ -42,14 +45,45 @@ public class LinkedList {
 		} else {
 			Node temp = new Node();
 			temp.data = value;
-			Node previousIndex = getNode(index - 1);
-			temp.next = previousIndex.next;
-			previousIndex.next = temp;
+			Node preNode = getNode(index - 1);
+			Node nextNode = preNode.next;
+			temp.next = nextNode;
+			preNode.next = temp;
+			temp.pre=preNode;
+			nextNode.pre=temp;
 			size++;
 		}
 	}
 
+	public int removeFirst() {
+		int removeElement = head.data;
+		if (size == 1) {
+			head = null;
+			tail = null;
+		} else {
+			Node temp = head;
+			head = head.next;
+			head.pre=null;
+			temp.next = null;
+		}
+		size--;
+		return removeElement;
+	}
 
+
+	public int removeLast() {
+		if (size == 1) {
+			return removeFirst();
+		} else {
+			int removeElement = tail.data;
+			Node tempNode = getNode(size - 1);
+			tempNode.next = null;
+			tail.pre=null;
+			tail = tempNode;
+			size--;
+			return removeElement;
+		}
+	}
 
 	int sizeLL() {
 		return size;
@@ -70,7 +104,10 @@ public class LinkedList {
 	Node getNode(int index) {
 		Node temp = head;
 		int i = 1;
-		while (i < index) {
+		while (temp!=null) {
+			if(i==index) {
+				return temp;
+			}
 			temp = temp.next;
 			i++;
 		}
@@ -79,8 +116,9 @@ public class LinkedList {
 
 	void disply() {
 		Node temp = head;
+		System.out.print("null<-->");
 		while (temp != null) {
-			System.out.print(temp.data + "-->");
+			System.out.print(temp.data + "<-->");
 			temp = temp.next;
 		}
 		System.out.print("null");
