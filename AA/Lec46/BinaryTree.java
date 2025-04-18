@@ -67,4 +67,19 @@ public class BinaryTree {
 		int rightMax = maxm(newNode.right);
 		return Math.max(newNode.data, (Math.max(leftMax, rightMax)));
 	}
+	public boolean find(int element) {
+		 boolean res=find(this.root, element);
+		 return res;
+	}
+	private boolean find(Node node,int element) {
+		if(node==null) {
+			return false;
+		}
+		if(node.data==element) {
+			return true;
+		}
+		boolean leftSide=find(node.left,element);
+		boolean rightSide=find(node.right,element);
+		return leftSide || rightSide;
+	}
 }

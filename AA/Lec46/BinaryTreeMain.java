@@ -5,5 +5,6 @@ public class BinaryTreeMain {
 		BinaryTree bt = new BinaryTree();
 		bt.display();
 		System.out.println(bt.maxm());
+		System.out.println(bt.find(100));
 	}
 }
