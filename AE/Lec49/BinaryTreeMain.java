@@ -6,5 +6,6 @@ public class BinaryTreeMain {
 		bt.display();
 		System.out.println(bt.maxm());
 		System.out.println(bt.find(100));
+		System.out.println(bt.height());
 	}
 }
